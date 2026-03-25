@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "Karavyn",
+    "slug": "karavyn",
+    "version": "0.0.1",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "karavyn",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "backgroundColor": "#1a1a2e"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "app.karavyn.mobile",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Karavyn needs your location to show you on the session map so your group can coordinate in real time.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Karavyn uses background location in Drive mode to keep your convoy connected even when the app is in the background."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#1a1a2e"
+      },
+      "package": "app.karavyn.mobile"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
