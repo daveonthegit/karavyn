@@ -6,13 +6,15 @@ import { authRoutes } from './modules/auth/auth.routes.js';
 import { usersRoutes } from './modules/users/users.routes.js';
 
 export async function buildApp() {
+  const usePrettyLogs =
+    env.NODE_ENV !== 'production' && process.stdout.isTTY === true;
+
   const app = Fastify({
     logger: {
       level: env.NODE_ENV === 'production' ? 'info' : 'debug',
-      transport:
-        env.NODE_ENV !== 'production'
-          ? { target: 'pino-pretty', options: { colorize: true } }
-          : undefined,
+      transport: usePrettyLogs
+        ? { target: 'pino-pretty', options: { colorize: true } }
+        : undefined,
     },
   });
 

@@ -1,4 +1,4 @@
-import { verifyToken as clerkVerifyToken } from '@clerk/backend';
+import { verifyToken as clerkVerify } from '@clerk/backend';
 import type { FastifyReply, FastifyRequest } from 'fastify';
 
 import { env } from '../../config/env.js';
@@ -12,7 +12,7 @@ export async function requireAuth(request: FastifyRequest, reply: FastifyReply) 
   }
 
   try {
-    const payload = await clerkVerifyToken(token, {
+    const payload = await clerkVerify(token, {
       secretKey: env.CLERK_SECRET_KEY,
     });
     request.userId = payload.sub;
@@ -24,7 +24,7 @@ export async function requireAuth(request: FastifyRequest, reply: FastifyReply) 
 }
 
 export async function verifyToken(token: string): Promise<string> {
-  const payload = await clerkVerifyToken(token, {
+  const payload = await clerkVerify(token, {
     secretKey: env.CLERK_SECRET_KEY,
   });
   return payload.sub;

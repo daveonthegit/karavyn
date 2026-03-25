@@ -17,8 +17,8 @@ export const sessionSchema = z.object({
   mode: sessionModeSchema,
   status: sessionStatusSchema,
   inviteCode: z.string(),
-  createdAt: z.string().datetime(),
-  endedAt: z.string().datetime().nullable(),
+  createdAt: z.iso.datetime(),
+  endedAt: z.iso.datetime().nullable(),
 });
 
 export type SessionMode = z.infer<typeof sessionModeSchema>;

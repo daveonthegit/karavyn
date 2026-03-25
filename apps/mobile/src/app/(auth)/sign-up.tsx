@@ -1,4 +1,4 @@
-import { useSignUp } from '@clerk/clerk-expo';
+import { useSignUp } from '@clerk/expo';
 import { Link, useRouter } from 'expo-router';
 import { useState, useCallback } from 'react';
 import {

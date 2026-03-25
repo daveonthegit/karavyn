@@ -6,7 +6,7 @@ export const locationUpdateSchema = z.object({
   heading: z.number().min(0).max(360).nullable(),
   speed: z.number().min(0).nullable(),
   accuracy: z.number().min(0),
-  timestamp: z.string().datetime(),
+  timestamp: z.iso.datetime(),
 });
 
 export type LocationUpdate = z.infer<typeof locationUpdateSchema>;

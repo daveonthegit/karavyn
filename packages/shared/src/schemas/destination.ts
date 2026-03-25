@@ -18,7 +18,7 @@ export const destinationSchema = z.object({
   placeId: z.string().nullable(),
   setBy: z.string(),
   isActive: z.boolean(),
-  createdAt: z.string().datetime(),
+  createdAt: z.iso.datetime(),
 });
 
 export type SetDestinationInput = z.infer<typeof setDestinationSchema>;

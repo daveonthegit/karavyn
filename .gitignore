@@ -37,6 +37,10 @@ android/
 # Testing
 coverage/
 
+# Dev scripts
+.dev-pids
+.dev-logs/
+
 # Misc
 *.log
 npm-debug.log*
